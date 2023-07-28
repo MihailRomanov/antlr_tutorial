@@ -1,0 +1,4 @@
+theme = 'hugo-book'
+
+[params]
+  BookSection = '*'
