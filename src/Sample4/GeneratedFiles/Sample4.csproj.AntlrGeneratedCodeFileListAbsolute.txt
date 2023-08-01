@@ -1,0 +1,3 @@
+D:\Projects\_Other\Antlr\AntlrTutorial\Sample4\GeneratedFiles\SimpleParser.cs
+D:\Projects\_Other\Antlr\AntlrTutorial\Sample4\GeneratedFiles\SimpleLexer.cs
+D:\Projects\_Other\Antlr\AntlrTutorial\Sample4\GeneratedFiles\Out.cs
