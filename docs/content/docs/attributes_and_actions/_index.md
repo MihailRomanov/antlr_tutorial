@@ -1,5 +1,5 @@
 ---
-title: Атрибуты (attributes) и действия (actions) в грамматиках
+title: Атрибуты и действия
 weight: 50
 ---
 
