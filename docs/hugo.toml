@@ -1,4 +1,2 @@
+title = 'ANTLR tutorial'
 theme = 'hugo-book'
-
-[params]
-  BookSection = '*'
