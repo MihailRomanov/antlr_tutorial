@@ -9,6 +9,6 @@ title: ANTLR Tutorial
 - базовое понимание .Net и принципов работы с Visual Studio (создать и собрать проект, подключить сборку, запустить на отладку ...)
 - хотябы минимальное представление об [CIL/MSIL](https://en.wikipedia.org/wiki/Common_Intermediate_Language)
 
-Все приведенные в пособии примеры можно найти в  виде [исходного кода](https://github.com/MihailRomanov/antlr_tutorial/src)
+Все приведенные в пособии примеры можно найти в  виде [исходного кода](https://github.com/MihailRomanov/antlr_tutorial/tree/master/src)
 
 Успешной вам работы с ANTLR!
