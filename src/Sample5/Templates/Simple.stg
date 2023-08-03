@@ -1,0 +1,16 @@
+﻿group Simple;
+
+program(st) ::=
+<<<st; separator="\n"> >>
+
+assign_stmt(id, exp) ::=
+<<Присваиваем переменной <id> выражение <exp> >>
+
+input_stmt(id) ::=
+<<Вводим значение переменной <id> >>
+
+print_stmt(exp) ::=
+<<Печатаем значения <exp; separator=", "> >>
+
+expression(e1, e2, operator) ::=
+<<(<e1> <operator> <e2>)>>

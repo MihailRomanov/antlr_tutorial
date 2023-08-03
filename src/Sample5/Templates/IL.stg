@@ -1,0 +1,36 @@
+﻿group IL;
+
+program(st) ::=
+<<
+.assembly Sample {}
+.assembly extern mscorlib {}
+.method static void main()
+{
+	.entrypoint
+	.maxstack 100
+	<st; separator="\n"> 
+	ret
+}
+>>
+
+assign_stmt(id, exp) ::=
+<<
+	<exp>
+	stloc <id>
+>>
+
+input_stmt(id) ::=
+<<
+	ldloc <id>
+	call void [mscorlib]System.Console::WriteLine(int32)
+>>
+
+print_stmt(exp) ::=
+<<
+	Печатаем значения <exp; separator=", "> 
+>>
+
+expression(e1, e2, operator) ::=
+<<
+(<e1> <operator> <e2>)
+>>
