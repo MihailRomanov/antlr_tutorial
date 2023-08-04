@@ -1,2 +1,6 @@
 title = 'ANTLR tutorial'
 theme = 'hugo-book'
+
+[markup]
+  [markup.highlight]
+    style = 'abap'

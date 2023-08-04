@@ -18,18 +18,18 @@ weight: 40
 При этом надо иметь в виду, что результаты генерации сохраняются в папку, которая указана в настройках ANTLRWorks (меню **File\Preferences**, закладка **General**, поле **Output Path**) 
 
 - генерация из командной строки. Если используется порт ANTLR на .Net, то для генерации можно воспользоваться командой:
-```
+```batch
 <путь к папке с Antlr>\Antlr3.exe -o <выходная директория> <файл грамматики>
 ```
 
 Если воспользоваться первым способом, то в выходном каталоге будут созданы файлы с именами:
-```
+```batch
 <имя грамматики>Lexer.java
 <имя грамматики>Parser.java
 <имя грамматики>.tokens
 ```
 если вторым, то:
-```
+```batch
 <имя грамматики>Lexer.cs
 <имя грамматики>Parser.cs
 <имя грамматики>.tokens
@@ -58,7 +58,7 @@ options { language = CSharp3; }
 
 Более подробно назначение этого атрибута будет рассказано позднее, а здесь приведен код грамматики, полученный после описанных изменений (сами изменения выделены полужирным):
 
-```
+```antlr
 grammar Simple;
 options { language = CSharp3; }
 
@@ -128,7 +128,7 @@ WS : ('\t' | '\r'? '\n' | ' ')+ { $channel = HIDDEN; } ;
 3.	Подключить к проекту библиотеку Antlr3.Runtime.dll
 4.	Заменим содержимое файла Program.cs на следующее:
 
-```
+```C#
 using System;
 using Antlr.Runtime;
 
@@ -159,7 +159,8 @@ namespace SimpleAnalizer
             // Вызываем разбор правила program
             parser.program();
 
-            // Анализируем результаты разбора. Если были синтаксические ошибки, выдадим лог анализа
+            // Анализируем результаты разбора. Если были 
+            // синтаксические ошибки, выдадим лог анализа
             if (parser.NumberOfSyntaxErrors != 0)
             {
                 Console.WriteLine(logBuffer.ToString());
@@ -175,7 +176,7 @@ namespace SimpleAnalizer
 
 Если теперь запустить представленную программу, то в результате на консоли появится сообщение **«All ok!»**, т.к. текст программы, записанный в переменную **inputString** – корректный. Однако, если его заменить, например, на:
 
-```
+```C#
 string inputString = "a = 3 + 4; input b =; print a + 1, b * 3;";
 ```
 
@@ -195,11 +196,11 @@ line 1:20 extraneous input '=' expecting ';'
     b.	повторно щелкнем на узле (уже выгруженного проекта) и выберем пункт **Edit <имя файла проекта>**
 5.	В открытом файле проекта найдем строку: 
 
-```
+```xml
  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
  ```
 и вставим вслед за ней:
-```
+```xml
   <PropertyGroup>
     <AntlrBuildTaskPath>$(ProjectDir)..\Resources\Antlr\</AntlrBuildTaskPath>
     <AntlrToolPath>$(ProjectDir)..\Resources\Antlr\Antlr3.exe</AntlrToolPath>
