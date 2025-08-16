@@ -78,7 +78,7 @@ jobs:
           restore-keys:
             hugo-
       - name: Build the site
-	working-directory: './docs'
+        working-directory: './docs'
         run: |
           hugo \
             --gc \
